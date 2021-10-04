@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scss 練習</title>
+  <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+  <section>
+    <h1 class="topic">
+      @mixin
+    </h1>
+    <p class="describe">
+      利用 @mixin 可以製造出一個包裹，在裡面添入 @content，只要 scss 利用 @include 呼叫 @mixin，就可將 @include 內的 css 匯入到該 @mixin 內的 @content 裡面。
+      <br><br>
+      範例：用來寫 RWD。
+      <br>
+    </p>
+    <pre class="code">
+      <span class="comment">// _mixin.scss</span>
+      @mixin pad {
+        @media (max-width:1024px) {
+          @content;
+        }
+      }
+      
+      @mixin phone {
+        @media (max-width:767px) {
+          @content;
+        }
+      }
+
+      <span class="comment">// all.scss</span>
+        .topic {
+          margin: 0 0 32px;
+          font-size: 36px;
+          text-align: center;
+        
+          @include pad {
+            font-size: 28px;
+          }
+        
+          @include phone {
+            margin: 0 0 24px;
+            font-size: 24px;
+          }
+        }</pre>
+  </section>
+
+</body>
+
+</html>

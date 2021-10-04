@@ -1,0 +1,66 @@
+@import "_mixin.scss";
+@import "_variable.scss";
+
+section {
+  width: 50%;
+  margin: 32px auto;
+
+  @include pad {
+    width: 75%;
+    margin: 24px auto;
+  }
+
+  @include phone {
+    width: 90%;
+    margin: 24px auto;
+  }
+}
+
+.topic {
+  margin: 0 0 32px;
+  color: $fontColor-tertiary;
+  font-size: 36px;
+  text-align: center;
+
+  @include pad {
+    font-size: 28px;
+  }
+
+  @include phone {
+    margin: 0 0 24px;
+    font-size: 24px;
+  }
+}
+
+.describe {
+  font-size: 24px;
+
+  @include pad {
+    font-size: 20px;
+  }
+
+  @include phone {
+    font-size: 16px;
+  }
+}
+
+.code {
+  padding: 6px;
+  margin: 6px 0;
+  font-size: 18px;
+  color: $fontColor-secondary;
+  background: $bg-secondary;
+  border-radius: 4px;
+
+  @include pad {
+    font-size: 16px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+.comment {
+  color: $bg-primary;
+}

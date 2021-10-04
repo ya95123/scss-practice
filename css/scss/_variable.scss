@@ -1,0 +1,23 @@
+$bg-primary: #191D23;
+$bg-secondary: #528A8E;
+
+$fontColor-primary: #FFE7C2;
+$fontColor-secondary: #DEC4AF;
+$fontColor-tertiary: #FCA071;
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: Times New Roman, 黑體-繁, Apple LiGothic Medium, PingFang, 微軟正黑體, Microsoft JhengHei, WenQuanYi Zen Hei, helvetica, Arial, sans-serif;
+}
+
+body {
+  background: $bg-primary;
+  color: $fontColor-primary;
+}
+
+img {
+  display: block;
+}
