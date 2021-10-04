@@ -79,6 +79,7 @@ section {
   color: #DEC4AF;
   background: #528A8E;
   border-radius: 4px;
+  overflow: auto;
 }
 
 @media (max-width: 1024px) {
@@ -95,4 +96,21 @@ section {
 
 .comment {
   color: #191D23;
+}
+
+.box {
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.randSize {
+  width: 121px;
+  height: 128px;
+}
+
+.randBg {
+  background: #9e6840;
 }

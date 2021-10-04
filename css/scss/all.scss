@@ -51,6 +51,7 @@ section {
   color: $fontColor-secondary;
   background: $bg-secondary;
   border-radius: 4px;
+  overflow: auto;
 
   @include pad {
     font-size: 16px;
@@ -63,4 +64,22 @@ section {
 
 .comment {
   color: $bg-primary;
+}
+
+// random
+.box {
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.randSize {
+  width: (random(230) + 49) + px;
+  height: (random(230) + 49) + px;
+}
+
+.randBg {
+  background: rgb((random(256) - 1), (random(256) - 1), (random(256) - 1));
 }

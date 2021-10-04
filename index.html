@@ -10,12 +10,14 @@
 </head>
 
 <body>
+  <!-- *@mixin -->
   <section>
     <h1 class="topic">
       @mixin
     </h1>
     <p class="describe">
-      利用 @mixin 可以製造出一個包裹，在裡面添入 @content，只要 scss 利用 @include 呼叫 @mixin，就可將 @include 內的 css 匯入到該 @mixin 內的 @content 裡面。
+      利用 @mixin 可以製造出一個包裹，在裡面添入 @content，只要 scss 利用 @include 呼叫 @mixin，就可將 @include 內的 css 匯入到該 @mixin 內的 @content
+      裡面，並叫出 @mixin 所有內容。
       <br><br>
       範例：用來寫 RWD。
       <br>
@@ -49,8 +51,55 @@
             font-size: 24px;
           }
         }</pre>
+    <br>
+
+    <p class="describe">
+      範例：帶參數寫法。
+    </p>
+    <pre class="code">
+      <span class="comment">// _mixin.scss</span>
+      @mixin text-color-size ($color,$size) {
+        color:$color;
+        font-size:$size;
+      }
+
+      <span class="comment">// all.scss</span>
+      a {
+        text-decoration: none;
+        @include text-color-size (white,20px);
+      }</pre>
   </section>
 
+  <!-- *random -->
+  <section>
+    <h1 class="topic">
+      random()
+    </h1>
+    <p class="describe">
+      random() 會產生 0 ~ 1 小數點的亂數。再括弧內加上數值，就會隨機出現 1 ~ 所設定的最大數值。但因為不能設定最小值，可以將最小值一開始就加入到數值中，最大值就要扣除最小值做亂數。
+      <br><br>
+      範例：隨機 box 的寬高、背景色。
+    </p>
+    <pre class="code">
+      <span class="comment">// box</span>
+      .box {
+        max-width: 100%;
+        margin: auto;
+        border-radius: 4px;
+      }
+
+      <span class="comment">// random() , 最小值就是 50px，random(參數) 最小值是 1</span>
+      .randSize {
+        width: (random(230) + 49) + px;
+        height: (random(230) + 49) + px;
+      }
+      
+      .randBg {
+        background: rgb(random(255), random(255), random(255));
+      }</pre>
+    <br>
+    <div class="box randSize randBg"></div>
+  </section>
 </body>
 
 </html>
