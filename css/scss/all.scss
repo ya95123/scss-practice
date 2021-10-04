@@ -81,3 +81,25 @@ section {
 .randBg {
   background: rgb((random(256) - 1), (random(256) - 1), (random(256) - 1));
 }
+
+// for circle
+$circlesNum: 8;
+$circleColor: skyblue;
+$spaceMultiplier: 12.5%;
+$rotateMultiplier: 1;
+$colorMultiplier: 20;
+
+.circle-frame {
+  width: 100%;
+  height: 300px;
+}
+
+@for $i from 1 through $circlesNum {
+  // TODO
+}
+
+@keyframes circlesRotate {
+  to {
+    transform: rotate(720deg);
+  }
+}

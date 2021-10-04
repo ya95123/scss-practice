@@ -105,10 +105,29 @@ section {
 }
 
 .randSize {
-  width: 254px;
-  height: 145px;
+  width: 241px;
+  height: 126px;
 }
 
 .randBg {
-  background: #13739e;
+  background: #f2ab3e;
+}
+
+.circle-frame {
+  width: 100%;
+  height: 300px;
+}
+
+@-webkit-keyframes circlesRotate {
+  to {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@keyframes circlesRotate {
+  to {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
 }
