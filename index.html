@@ -80,6 +80,9 @@
       <br><br>
       範例：隨機 box 的寬高、背景色。
     </p>
+    <br>
+    <div class="box randSize randBg"></div>
+    <br>
     <pre class="code">
       <span class="comment">// box</span>
       .box {
@@ -97,17 +100,18 @@
       .randBg {
         background: rgb(random(255), random(255), random(255));
       }</pre>
-    <br>
-    <div class="box randSize randBg"></div>
   </section>
 
   <!-- *for -->
   <section>
     <h1 class="topic">@for</h1>
     <p class="describe">
-      如同 js 一樣可以做迴圈。
+      如同 js 一樣可以做迴圈。<br>
+      用法：@for 變數 from 起始值 to/through 末值。to 只到末值前一項結束，through 則是到末值結束。
+      <br><br>
+      範例：多個圓圈，利用 @for 做變化。
     </p>
-    <!-- TODO 神奇的圓圈 https://codepen.io/keithwyland/pen/MaLMmx -->
+    <!-- 神奇的圓圈 https://codepen.io/keithwyland/pen/MaLMmx -->
     <div class="circle-frame">
       <div class="circle"></div>
       <div class="circle"></div>
@@ -117,7 +121,48 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
+      <div class="circle"></div>
     </div>
+    <pre class="code">
+      <span class="comment">// 設定變數</span>
+      $circlesNum: 9;
+      $circleColor: skyblue;
+      $spaceMultiplier: 9%;
+      $rotateMultiplier: 1;
+      $colorMultiplier: 25;
+
+      <span class="comment">// circle-frame、原始 circle css 與動畫設定</span>
+      .circle-frame {
+        width: 100%;
+        height: 12vh;
+        margin: 3vh 0;
+        position: relative;
+      }
+      
+      .circle {
+        width: 3vw;
+        height: 3vw;
+        border: 2px solid $circleColor;
+        border-radius: 45%;
+        position: absolute;
+        top: 50%;
+      }
+
+      @keyframes circlesRotate {
+        to {
+          transform: rotate(720deg) translateY(-50%);
+        }
+      }
+      
+      <span class="comment">// 利用 @for 搭配變數使 circle 做變化</span>
+      @for $i from 1 through $circlesNum {
+        .circle:nth-child(#{$i}) {
+          border-color: adjust-hue($circleColor, $i*$colorMultiplier);
+          left: $i*$spaceMultiplier;
+          transform: rotate($i*$rotateMultiplier*1deg) translateY(-50%);
+          animation: 4s $i*0.5s circlesRotate infinite alternate;
+        }
+      }</pre>
   </section>
 </body>
 

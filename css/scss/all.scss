@@ -83,23 +83,40 @@ section {
 }
 
 // for circle
-$circlesNum: 8;
+$circlesNum: 9;
 $circleColor: skyblue;
-$spaceMultiplier: 12.5%;
+$spaceMultiplier: 9%;
 $rotateMultiplier: 1;
-$colorMultiplier: 20;
+$colorMultiplier: 25;
 
 .circle-frame {
   width: 100%;
-  height: 300px;
+  height: 12vh;
+  margin: 3vh 0;
+  position: relative;
 }
 
+.circle {
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid $circleColor;
+  border-radius: 45%;
+  position: absolute;
+  top: 50%;
+}
+
+/* 從 0 開始，第一個才會是原始值，從 0 的話要把 through 改成 to */
 @for $i from 1 through $circlesNum {
-  // TODO
+  .circle:nth-child(#{$i}) {
+    border-color: adjust-hue($circleColor, $i*$colorMultiplier);
+    left: $i*$spaceMultiplier;
+    transform: rotate($i*$rotateMultiplier*1deg) translateY(-50%);
+    animation: 4s $i*0.5s circlesRotate infinite alternate;
+  }
 }
 
 @keyframes circlesRotate {
   to {
-    transform: rotate(720deg);
+    transform: rotate(720deg) translateY(-50%);
   }
 }
