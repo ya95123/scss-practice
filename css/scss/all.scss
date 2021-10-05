@@ -1,6 +1,8 @@
-@import "_mixin.scss";
 @import "_variable.scss";
+@import "_mixin.scss";
+@import "_extend.scss";
 
+// mixin
 section {
   width: 50%;
   margin: 32px auto;
@@ -64,6 +66,22 @@ section {
 
 .comment {
   color: $bg-primary;
+}
+
+// extend
+.btn-frame {
+  width: fit-content;
+  margin: auto;
+}
+
+.btn-default {
+  @extend %btn;
+  border: 1px solid $bg-secondary;
+}
+
+.btn-check {
+  @extend %btn;
+  background: $fontColor-tertiary;
 }
 
 // random

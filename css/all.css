@@ -6,6 +6,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Times New Roman, 黑體-繁, Apple LiGothic Medium, PingFang, 微軟正黑體, Microsoft JhengHei, WenQuanYi Zen Hei, helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,6 +16,17 @@ body {
 
 img {
   display: block;
+}
+
+.btn-default, .btn-check {
+  padding: 8px 16px;
+  margin: 16px 8px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 section {
@@ -98,6 +110,21 @@ section {
   color: #191D23;
 }
 
+.btn-frame {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.btn-default {
+  border: 1px solid #528A8E;
+}
+
+.btn-check {
+  background: #FCA071;
+}
+
 .box {
   max-width: 100%;
   margin: auto;
@@ -105,12 +132,12 @@ section {
 }
 
 .randSize {
-  width: 150px;
-  height: 266px;
+  width: 119px;
+  height: 219px;
 }
 
 .randBg {
-  background: #f5025d;
+  background: #f99939;
 }
 
 .circle-frame {

@@ -17,7 +17,7 @@
     </h1>
     <p class="describe">
       利用 @mixin 可以製造出一個包裹，在裡面添入 @content，只要 scss 利用 @include 呼叫 @mixin，就可將 @include 內的 css 匯入到該 @mixin 內的 @content
-      裡面，並叫出 @mixin 所有內容。
+      裡面，並叫出 @mixin 所有內容，且可帶參數。
       <br><br>
       範例：用來寫 RWD。
       <br>
@@ -70,6 +70,43 @@
       }</pre>
   </section>
 
+  <!-- *@extend -->
+  <section>
+    <h1 class="topic">
+      @extend
+    </h1>
+    <p class="describe">
+      @extend 可以用來做重複的 css 架構，但不可帶參數，跟 @mixin 的區別除了參數上，@extend 不會一直重複做宣告的動作，會被統整在一起。
+    </p>
+    <div class="btn-frame">
+      <a class="btn-default" href="#">飛向宇宙</a>
+      <a class="btn-check" href="#">浩瀚無垠</a>
+    </div>
+
+    <pre class="code">
+      <span class="comment">// _extend.scss</span>
+      %btn {
+        padding: 8px 16px;
+        margin: 16px 8px;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      <span class="comment">// all.scss</span>
+      .btn-default {
+        @extend %btn;
+        border: 1px solid $bg-secondary;
+      }
+      
+      .btn-check {
+        @extend %btn;
+        background: $fontColor-tertiary;
+      }</pre>
+  </section>
   <!-- *random -->
   <section>
     <h1 class="topic">
@@ -153,7 +190,7 @@
           transform: rotate(720deg) translateY(-50%);
         }
       }
-      
+
       <span class="comment">// 利用 @for 搭配變數使 circle 做變化</span>
       @for $i from 1 through $circlesNum {
         .circle:nth-child(#{$i}) {
