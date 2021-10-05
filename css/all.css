@@ -106,11 +106,11 @@ section {
 
 .randSize {
   width: 150px;
-  height: 265px;
+  height: 266px;
 }
 
 .randBg {
-  background: #7cb37f;
+  background: #f5025d;
 }
 
 .circle-frame {
@@ -121,8 +121,8 @@ section {
 }
 
 .circle {
-  width: 3vw;
-  height: 3vw;
+  width: 2.5vw;
+  height: 2.5vw;
   border: 2px solid skyblue;
   border-radius: 45%;
   position: absolute;
